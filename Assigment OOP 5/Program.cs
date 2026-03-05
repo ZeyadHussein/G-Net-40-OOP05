@@ -47,25 +47,53 @@
             /// b)
             /// We fix it using Explicit Interface Implementation.
 
-        /// This technique is called:
-        /// ➤ Explicit Interface Implementation
+            /// This technique is called:
+            /// ➤ Explicit Interface Implementation
 
-        /// c)
-        /// No, you CANNOT call translator.Greet() directly.
-        /// Because explicit implementations are not public methods.
-        ///
-        /// You must cast:
-        /// CODE PART
-        
-
-        /// Translator translator = new Translator();
-        /// ((IEnglishSpeaker)translator).Greet();  // Hello
-        /// ((IArabicSpeaker)translator).Greet();   // Ahlan
-
-        #endregion
+            /// c)
+            /// No, you CANNOT call translator.Greet() directly.
+            /// Because explicit implementations are not public methods.
+            ///
+            /// You must cast:
+            /// CODE PART
 
 
-        #endregion
+            /// Translator translator = new Translator();
+            /// ((IEnglishSpeaker)translator).Greet();  // Hello
+            /// ((IArabicSpeaker)translator).Greet();   // Ahlan
+
+            #endregion
+
+            #region Question 3:Explain shallow copy vs deep copy.
+            /*
+            Q3: Explain shallow copy vs deep copy.
+            */
+
+            /// Answer:
+
+            /// Shallow Copy:
+            /// Copies value types normally,
+            /// but copies references for reference-type fields.
+            /// Both objects share the same referenced objects.
+
+            /// Deep Copy:
+            /// Creates completely independent copies,
+            /// including all referenced objects.
+
+            /// Risk of shallow copy:
+            /// If the object contains reference-type fields,
+            /// modifying the copied object's reference will affect the original.
+
+            /// Use shallow copy:
+            /// When object contains only value types
+            /// or shared references are acceptable.
+
+            /// Use deep copy:
+            /// When full independence is required.
+            #endregion
+
+
+            #endregion
+        }
     }
-}
 }
