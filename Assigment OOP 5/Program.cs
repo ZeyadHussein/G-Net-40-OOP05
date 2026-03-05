@@ -92,6 +92,44 @@
             /// When full independence is required.
             #endregion
 
+            #region Qouestion 4: Determine the output and explain why.
+            /*
+            Q4: Determine the output and explain why.
+            */
+
+            //test part:
+            //Employee e1 = new Employee
+            //{
+            //    Title = "Dev",
+            //    Dept = new Department { Name = "IT" }
+            //};
+
+            //Employee e2 = e1.ShallowCopy();
+
+            //e2.Title = "QA";
+            //e2.Dept.Name = "Testing";
+
+            //Console.WriteLine($"{e1.Title} - {e1.Dept.Name}");
+            //Console.WriteLine($"{e2.Title} - {e2.Dept.Name}");
+
+            /*
+            Expected Output:
+
+            Dev - Testing
+            QA - Testing
+
+            Explanation: e2 is a shallow copy.Title is a string (immutable reference), so changing e2.Title does NOT affect e1.
+
+            BUT Dept is a reference type. Both e1 and e2 reference the SAME Department object.
+
+            So when: e2.Dept.Name = "Testing";
+
+            It affects both objects.
+
+            Therefore:e1.Title remains "Dev"  e1.Dept.Name becomes "Testing"
+            */
+            #endregion
+
 
             #endregion
         }
